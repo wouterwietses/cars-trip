@@ -1,0 +1,14 @@
+{
+  "name": "cars-trip",
+  "devDependencies": {
+    "@usebruno/cli": "^2.9.0"
+  },
+  "scripts": {
+    "docker:build": "docker stop cars-trip-container || true && docker rm cars-trip-container || true && docker build -t cars-trip . --progress=plain",
+    "docker:run": "docker stop cars-trip-container || true && docker rm cars-trip-container || true && docker run -d -p 8080:8080 --name cars-trip-container cars-trip",
+    "docker:stop": "docker stop cars-trip-container",
+    "docker:exec": "docker exec -it cars-trip-container /bin/sh",
+    "test:smoke": "curl -s http://localhost:8080/health | jq .",
+    "test:integration": "cd api/collection/cars-trip && bru run"
+  }
+}

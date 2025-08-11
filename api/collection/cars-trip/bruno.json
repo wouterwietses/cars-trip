@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "cars-trip",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
