@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:cars-trip}",
+            "name": "Debug Api",
+            "program": "${workspaceFolder:cars-trip}/.build/debug/Api",
+            "preLaunchTask": "swift: Build Debug Api"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:cars-trip}",
+            "name": "Release Api",
+            "program": "${workspaceFolder:cars-trip}/.build/release/Api",
+            "preLaunchTask": "swift: Build Release Api"
+        }
+    ]
+}
