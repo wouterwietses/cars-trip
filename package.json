@@ -1,7 +1,10 @@
 {
   "name": "cars-trip",
   "devDependencies": {
-    "@usebruno/cli": "^2.9.0"
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@usebruno/cli": "^2.9.0",
+    "husky": "^9.1.7"
   },
   "scripts": {
     "docker:build": "docker stop cars-trip-container || true && docker rm cars-trip-container || true && docker build -t cars-trip . --progress=plain",
@@ -9,6 +12,7 @@
     "docker:stop": "docker stop cars-trip-container",
     "docker:exec": "docker exec -it cars-trip-container /bin/sh",
     "test:smoke": "curl -s http://localhost:8080/health | jq .",
-    "test:integration": "cd api/collection/cars-trip && bru run"
+    "test:integration": "cd api/collection/cars-trip && bru run",
+    "prepare": "husky"
   }
 }
