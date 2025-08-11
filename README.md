@@ -6,8 +6,8 @@
 
 ### Current Situation
 
-You're working with a car simulation system that currently only supports gasoline-powered vehicles. 
-The `Car` class and the `ICarEntity` interface model these vehicles with properties like fuel consumption (l/100km), tank capacity, 
+You're working with a car simulation system that currently only supports gasoline-powered vehicles.
+The `Car` class and the `ICarEntity` interface model these vehicles with properties like fuel consumption (l/100km), tank capacity,
 and the behaviours for refueling and traveling.
 
 ## Challenge: Electric Vehicles Implementation
