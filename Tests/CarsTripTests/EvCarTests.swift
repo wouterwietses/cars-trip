@@ -43,4 +43,12 @@ struct ElectricVehicleTests {
         #expect(availableCharge == 6.5)
         #expect(car.data().contains("Current Charge Available: 6.5 kWh"))
     }
+
+    @Test("should add up mileage after every trip")
+    func shouldAddUpMileageAfterEveryTrip() async throws {
+        let car = ElectricCar(AvailableVehicles.Tesla.ModelThree)
+        car.charge(kWh: 25)
+        car.travel(100)
+        #expect(car.mileage() == 100)
+    }
 }

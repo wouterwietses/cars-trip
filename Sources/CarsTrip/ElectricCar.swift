@@ -7,6 +7,7 @@ final class ElectricCar: ICarEntity, IElectricPowered {
     private var chargeAvailable: Double
     private let batteryCapacity: Double
     private let energyConsumption: Double
+    private var totalMileage: Double = 0
 
     init(_ modelInfo: ElectricVehicleModel) {
         brand = modelInfo.brand.rawValue
@@ -30,10 +31,11 @@ final class ElectricCar: ICarEntity, IElectricPowered {
 
     func travel(_ distance: Double) {
         chargeAvailable -= distance * energyConsumption / 100
+        totalMileage += distance
     }
 
     func mileage() -> Double {
-        0
+        totalMileage
     }
 
     func currentCharge() -> Double {
