@@ -67,13 +67,17 @@ struct Handler: APIProtocol {
         )))
     }
 
-    func addVehicle(_: Operations.AddVehicle.Input) async throws -> Operations.AddVehicle.Output {
-        .created(.init(body: .json(
+    func addVehicle(_ input: Operations.AddVehicle.Input) async throws -> Operations.AddVehicle.Output {
+        let vehicle: Operations.AddVehicle.Input.Body.JsonPayload = switch input.body {
+        case let .json(json): json
+        }
+
+        return .created(.init(body: .json(
             .init(
                 id: 0,
-                brand: "Jaguar",
-                model: "X-Type",
-                engineType: .gasoline,
+                brand: vehicle.brand,
+                model: vehicle.model,
+                engineType: .electric,
                 totalMileage: 0
             )
         )))
