@@ -24,4 +24,5 @@
 
 ## 🍅 Pomodoro 4
 
-- ⚠️ Refactor project
+- ✅ Renamed car test to Gasoline Car tests
+- ⚠️ Introduce brand new EV car

@@ -2,8 +2,8 @@ import Testing
 
 @testable import CarsTrip
 
-@Suite("Car")
-struct CarTests {
+@Suite("Gasoline car")
+struct GasolineCarTests {
     @Test("should be instantiated with zero mileage")
     func shouldBeInstantiatedWithZeroMileage() async throws {
         let car = Car(AvailableVehicles.Toyota.Corolla)
