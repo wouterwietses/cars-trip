@@ -30,4 +30,4 @@
 
 ## 🍅 Pomodoro 5
 
-- ⚠️ Refactor car into EVCar and GasolineCar
+- ✅ Refactor car into EVCar and GasolineCar

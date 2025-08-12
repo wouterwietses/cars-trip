@@ -9,5 +9,11 @@ protocol ICarEntity {
 }
 
 protocol IGasolinePowered {
+    func fuelAmount() -> Double
     func refillGasoline(_ liters: Double)
+}
+
+protocol IElectricPowered {
+    func currentCharge() -> Double
+    func charge(kWh: Double)
 }

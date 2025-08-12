@@ -6,7 +6,7 @@ import Testing
 struct GasolineCarTests {
     @Test("should be instantiated with zero mileage")
     func shouldBeInstantiatedWithZeroMileage() async throws {
-        let car = Car(AvailableVehicles.Toyota.Corolla)
+        let car = GasolineCar(AvailableVehicles.Toyota.Corolla)
         let mileage = car.mileage()
         let amountOfFuelAvailable = car.fuelAmount()
 
@@ -20,7 +20,7 @@ struct GasolineCarTests {
 
     @Test("should be filled with gasoline")
     func shouldBeFilledWithGasoline() async throws {
-        let car = Car(AvailableVehicles.Toyota.Corolla)
+        let car = GasolineCar(AvailableVehicles.Toyota.Corolla)
         car.refillGasoline(15)
         let amountOfFuelAvailable = car.fuelAmount()
         #expect(amountOfFuelAvailable == 15)
@@ -28,7 +28,7 @@ struct GasolineCarTests {
 
     @Test("should be filled with gasoline not more than tank capacity")
     func shouldBeFilledWithGasolineNotMoreThanTankCapacity() async throws {
-        let car = Car(AvailableVehicles.Toyota.Camry)
+        let car = GasolineCar(AvailableVehicles.Toyota.Camry)
         car.refillGasoline(75)
         let amountOfFuelAvailable = car.fuelAmount()
         #expect(amountOfFuelAvailable == 40)
@@ -36,7 +36,7 @@ struct GasolineCarTests {
 
     @Test("should be able to travel using the fuel")
     func shouldBeAbleToTravelUsingTheFuel() async throws {
-        let car = Car(AvailableVehicles.Toyota.Camry)
+        let car = GasolineCar(AvailableVehicles.Toyota.Camry)
         car.refillGasoline(15)
         car.travel(100)
         let amountOfFuelAvailable = car.fuelAmount()
@@ -46,7 +46,7 @@ struct GasolineCarTests {
 
     @Test("should add up mileage after every trip")
     func shouldAddUpMileageAfterEveryTrip() async throws {
-        let car = Car(AvailableVehicles.Toyota.Camry)
+        let car = GasolineCar(AvailableVehicles.Toyota.Camry)
         car.refillGasoline(15)
         car.travel(100)
         #expect(car.mileage() == 100)
@@ -54,7 +54,7 @@ struct GasolineCarTests {
 
     @Test("should be able to travel using the fuel")
     func shouldBeAbleToTravelUsingTheFuel_1() async throws {
-        let car = Car(AvailableVehicles.Toyota.Camry)
+        let car = GasolineCar(AvailableVehicles.Toyota.Camry)
         car.refillGasoline(14)
         car.travel(50)
         let amountOfFuelAvailable = car.fuelAmount()

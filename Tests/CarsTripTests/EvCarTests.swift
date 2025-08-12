@@ -6,12 +6,12 @@ import Testing
 struct ElectricVehicleTests {
     @Test("should be instantiated with zero mileage")
     func shouldBeInstantiatedWithZerMileage() async throws {
-        let car = Car(AvailableVehicles.Tesla.ModelThree)
+        let car = ElectricCar(AvailableVehicles.Tesla.ModelThree)
         let mileage = car.mileage()
-        let amountOfFuelAvailable = car.currentCharge()
+        let currentChargeAvailable = car.currentCharge()
 
         #expect(mileage == 0)
-        #expect(amountOfFuelAvailable == 0)
+        #expect(currentChargeAvailable == 0)
         #expect(car.name().contains("Tesla"))
         #expect(car.name().contains("Model 3"))
         #expect(car.data().contains("Total Mileage: 0.0 Km"))
@@ -20,7 +20,7 @@ struct ElectricVehicleTests {
 
     @Test("should be charged")
     func shouldBeCharged() async throws {
-        let car = Car(AvailableVehicles.Tesla.ModelThree)
+        let car = ElectricCar(AvailableVehicles.Tesla.ModelThree)
         car.charge(kWh: 15)
         let currentCharge = car.currentCharge()
         #expect(currentCharge == 15)
@@ -28,7 +28,7 @@ struct ElectricVehicleTests {
 
     @Test("should be charged not more than battery capacity")
     func shouldBeFilledWithGasolineNotMoreThanTankCapacity() async throws {
-        let car = Car(AvailableVehicles.Tesla.ModelThree)
+        let car = ElectricCar(AvailableVehicles.Tesla.ModelThree)
         car.charge(kWh: 100)
         let currentCharge = car.currentCharge()
         #expect(currentCharge == 80)

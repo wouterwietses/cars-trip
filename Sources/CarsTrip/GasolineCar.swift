@@ -1,6 +1,6 @@
 import Foundation
 
-final class Car: ICarEntity {
+final class GasolineCar: ICarEntity, IGasolinePowered {
     private let _id: UUID = .init()
     private let brand: String
     private let model: String
@@ -8,32 +8,19 @@ final class Car: ICarEntity {
     private let tankCapacity: Double
     private var totalMileage: Double = 0
     private var fuelAvailable: Double
-    private let engineType: EngineType
-    private var chargeAvailable: Double
-    private let batteryCapacity: Double
 
-    init(_ modelInfo: CarModel) {
+    init(_ modelInfo: GasolineVehicleModel) {
         brand = modelInfo.brand.rawValue
         model = modelInfo.model
         fuelConsumption = modelInfo.fuelConsumption
         tankCapacity = modelInfo.tankCapacity
-        engineType = modelInfo.engineType
         fuelAvailable = 0
-        chargeAvailable = 0
-        batteryCapacity = modelInfo.batteryCapacity
     }
 
     func refillGasoline(_ liters: Double) {
         fuelAvailable += liters
         if fuelAvailable > tankCapacity {
             fuelAvailable = tankCapacity
-        }
-    }
-
-    func charge(kWh: Double) {
-        chargeAvailable += kWh
-        if chargeAvailable > batteryCapacity {
-            chargeAvailable = batteryCapacity
         }
     }
 
@@ -55,20 +42,12 @@ final class Car: ICarEntity {
         fuelAvailable
     }
 
-    func currentCharge() -> Double {
-        chargeAvailable
-    }
-
     func name() -> String {
         "\(brand) \(model) \(id())"
     }
 
     func data() -> String {
-        if engineType == .gasoline {
-            "\(name())\nTotal Mileage: \(mileage()) Km\nFuel Available: \(fuelAmount()) l"
-        } else {
-            "\(name())\nTotal Mileage: \(mileage()) Km\nCurrent Charge Available: \(currentCharge()) kWh"
-        }
+        "\(name())\nTotal Mileage: \(mileage()) Km\nFuel Available: \(fuelAmount()) l"
     }
 
     private func calculateTripFuelConsumption(_ distance: Double) -> Double {
