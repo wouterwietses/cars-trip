@@ -25,4 +25,4 @@
 ## 🍅 Pomodoro 4
 
 - ✅ Renamed car test to Gasoline Car tests
-- ⚠️ Introduce brand new EV car
+- ✅ Introduce brand new EV car

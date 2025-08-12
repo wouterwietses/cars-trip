@@ -5,8 +5,3 @@ struct CarModel {
     let fuelConsumption: Double
     let tankCapacity: Double
 }
-
-enum EngineType {
-    case gasoline
-    case electric
-}
