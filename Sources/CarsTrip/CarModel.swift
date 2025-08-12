@@ -4,4 +4,5 @@ struct CarModel {
     let engineType: EngineType
     let fuelConsumption: Double
     let tankCapacity: Double
+    let batteryCapacity: Double
 }

@@ -5,14 +5,16 @@ enum AvailableVehicles {
             model: "Corolla",
             engineType: .gasoline,
             fuelConsumption: 5,
-            tankCapacity: 30
+            tankCapacity: 30,
+            batteryCapacity: 0
         )
         static let Camry = CarModel(
             brand: .toyota,
             model: "Camry",
             engineType: .gasoline,
             fuelConsumption: 7,
-            tankCapacity: 40
+            tankCapacity: 40,
+            batteryCapacity: 0
         )
     }
 
@@ -22,7 +24,8 @@ enum AvailableVehicles {
             model: "Mustang",
             engineType: .gasoline,
             fuelConsumption: 8,
-            tankCapacity: 50
+            tankCapacity: 50,
+            batteryCapacity: 0
         )
     }
 
@@ -32,7 +35,8 @@ enum AvailableVehicles {
             model: "Model 3",
             engineType: .electric,
             fuelConsumption: 10,
-            tankCapacity: 100
+            tankCapacity: 100,
+            batteryCapacity: 80
         )
     }
 }

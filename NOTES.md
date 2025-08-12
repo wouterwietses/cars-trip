@@ -26,4 +26,4 @@
 
 - ✅ Renamed car test to Gasoline Car tests
 - ✅ Introduce brand new EV car
-- ⚠️ EV car should be able to charge
+- ✅ EV car should be able to charge
