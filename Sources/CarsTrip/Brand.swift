@@ -3,4 +3,5 @@ enum Brand: String {
     case ford = "Ford"
     case renault = "Renault"
     case jaguar = "Jaguar"
+    case tesla = "Tesla"
 }

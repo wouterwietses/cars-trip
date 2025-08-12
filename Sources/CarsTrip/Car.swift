@@ -8,12 +8,14 @@ final class Car: ICarEntity {
     private let tankCapacity: Double
     private var totalMileage: Double = 0
     private var fuelAvailable: Double
+    private let engineType: EngineType
 
     init(_ modelInfo: CarModel) {
         brand = modelInfo.brand.rawValue
         model = modelInfo.model
         fuelConsumption = modelInfo.fuelConsumption
         tankCapacity = modelInfo.tankCapacity
+        engineType = modelInfo.engineType
         fuelAvailable = 0
     }
 
@@ -42,12 +44,20 @@ final class Car: ICarEntity {
         fuelAvailable
     }
 
+    func currentCharge() -> Double {
+        0
+    }
+
     func name() -> String {
         "\(brand) \(model) \(id())"
     }
 
     func data() -> String {
-        "\(name())\nTotal Mileage: \(mileage()) Km\nFuel Available: \(fuelAmount()) l"
+        if engineType == .gasoline {
+            "\(name())\nTotal Mileage: \(mileage()) Km\nFuel Available: \(fuelAmount()) l"
+        } else {
+            "\(name())\nTotal Mileage: \(mileage()) Km\nCurrent Charge Available: \(currentCharge()) kWh"
+        }
     }
 
     private func calculateTripFuelConsumption(_ distance: Double) -> Double {

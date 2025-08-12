@@ -1,16 +1,38 @@
 enum AvailableVehicles {
     enum Toyota {
         static let Corolla = CarModel(
-            brand: .toyota, model: "Corolla", fuelConsumption: 5, tankCapacity: 30
+            brand: .toyota,
+            model: "Corolla",
+            engineType: .gasoline,
+            fuelConsumption: 5,
+            tankCapacity: 30
         )
         static let Camry = CarModel(
-            brand: .toyota, model: "Camry", fuelConsumption: 7, tankCapacity: 40
+            brand: .toyota,
+            model: "Camry",
+            engineType: .gasoline,
+            fuelConsumption: 7,
+            tankCapacity: 40
         )
     }
 
     enum Ford {
         static let Mustang = CarModel(
-            brand: .ford, model: "Mustang", fuelConsumption: 8, tankCapacity: 50
+            brand: .ford,
+            model: "Mustang",
+            engineType: .gasoline,
+            fuelConsumption: 8,
+            tankCapacity: 50
+        )
+    }
+
+    enum Tesla {
+        static let ModelThree = CarModel(
+            brand: .tesla,
+            model: "Model 3",
+            engineType: .electric,
+            fuelConsumption: 10,
+            tankCapacity: 100
         )
     }
 }
