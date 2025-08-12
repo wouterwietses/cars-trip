@@ -9,6 +9,7 @@ final class Car: ICarEntity {
     private var totalMileage: Double = 0
     private var fuelAvailable: Double
     private let engineType: EngineType
+    private var chargeAvailable: Double
 
     init(_ modelInfo: CarModel) {
         brand = modelInfo.brand.rawValue
@@ -17,6 +18,7 @@ final class Car: ICarEntity {
         tankCapacity = modelInfo.tankCapacity
         engineType = modelInfo.engineType
         fuelAvailable = 0
+        chargeAvailable = 0
     }
 
     func refillGasoline(_ liters: Double) {
@@ -24,6 +26,10 @@ final class Car: ICarEntity {
         if fuelAvailable > tankCapacity {
             fuelAvailable = tankCapacity
         }
+    }
+
+    func charge(kWh: Double) {
+        chargeAvailable = kWh
     }
 
     func travel(_ distance: Double) {
@@ -45,7 +51,7 @@ final class Car: ICarEntity {
     }
 
     func currentCharge() -> Double {
-        0
+        chargeAvailable
     }
 
     func name() -> String {

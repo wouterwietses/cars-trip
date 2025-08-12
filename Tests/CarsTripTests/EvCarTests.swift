@@ -17,4 +17,12 @@ struct ElectricVehicleTests {
         #expect(car.data().contains("Total Mileage: 0.0 Km"))
         #expect(car.data().contains("Current Charge Available: 0.0 kWh"))
     }
+
+    @Test("should be charged")
+    func shouldBeCharged() async throws {
+        let car = Car(AvailableVehicles.Tesla.ModelThree)
+        car.charge(kWh: 15)
+        let currentCharge = car.currentCharge()
+        #expect(currentCharge == 15)
+    }
 }
