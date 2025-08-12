@@ -31,7 +31,8 @@ enum AvailableVehicles {
             brand: .tesla,
             model: "Model 3",
             engineType: .electric,
-            batteryCapacity: 80
+            batteryCapacity: 75,
+            energyConsumption: 18.5
         )
     }
 }

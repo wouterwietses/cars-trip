@@ -17,4 +17,5 @@ struct ElectricVehicleModel: CarModel {
     let model: String
     let engineType: EngineType
     let batteryCapacity: Double
+    let energyConsumption: Double
 }

@@ -31,6 +31,16 @@ struct ElectricVehicleTests {
         let car = ElectricCar(AvailableVehicles.Tesla.ModelThree)
         car.charge(kWh: 100)
         let currentCharge = car.currentCharge()
-        #expect(currentCharge == 80)
+        #expect(currentCharge == 75)
+    }
+
+    @Test("should be able to travel using the battery")
+    func shouldBeAbleToTravelUsingTheFuel() async throws {
+        let car = ElectricCar(AvailableVehicles.Tesla.ModelThree)
+        car.charge(kWh: 25)
+        car.travel(100)
+        let availableCharge = car.currentCharge()
+        #expect(availableCharge == 6.5)
+        #expect(car.data().contains("Current Charge Available: 6.5 kWh"))
     }
 }

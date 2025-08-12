@@ -31,3 +31,4 @@
 ## 🍅 Pomodoro 5
 
 - ✅ Refactor car into EVCar and GasolineCar
+- ✅ should be able to travel using the battery
