@@ -38,4 +38,10 @@ jobs:
           xcrun llvm-cov export               "${COV_BIN}"               -instr-profile=$INSTR_PROFILE               -ignore-filename-regex=$IGNORE_FILENAME_REGEX               -format=$FORMAT > $OUTPUT_FILE
       - name: Upload results to Codecov 
         uses: codecov/codecov-action@v5
-      - run: npm run docker:build
+  containerize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build docker container
+        run: npm run docker:build
+
