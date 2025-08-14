@@ -54,4 +54,7 @@ jobs:
         run: npm run docker:build
       - name: Run docker container
         run: npm run docker:run
-
+      - name: Run docker smoketest
+        run: npm run test:smoke
+      - name: Run docker smoketest
+        run: npm run test:integration
